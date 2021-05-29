@@ -9,19 +9,98 @@
     <link rel="shortcut icon" href="assets/book.png" />
 
     <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
+
   <body>
     <header>
-      <a href="">
+      <!-- <a href="/" class="header-left">
         <figure>
-          <img src="assets/book.png" alt="icon" />
+          <img src="assets/book.png" alt="icon" class="img-icon" />
         </figure>
         <h1>Book Self Reminder</h1>
-      </a>
+      </a> -->
+      <!-- <a href="" class="header-right">
+        <h1>Profile</h1>
+      </a> -->
     </header>
-    <main></main>
+    <main>
+      <section class="wrapper container bg-white shadow">
+        <h2 class="container-header">Yang harus dilakukan</h2>
+        <div class="list-item" id="todos"></div>
+      </section>
+
+      <section class="wrapper container bg-white shadow">
+        <h2 class="container-header">Yang sudah dilakukan</h2>
+        <div class="list-item" id="completed-todos"></div>
+      </section>
+
+      <button class="add-item" id="addItem">
+        <div class="cirle-btn"><i class="fa fa-plus"></i></div>
+      </button>
+
+      <!-- Modal Add item -->
+      <div class="modal" id="modalItem">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Add Books</h2>
+
+          <form class="form" action="#" id="formBook">
+            <div class="form-group form-title">
+              <label for="title">Book Title</label>
+              <input type="text" id="title" name="title" required />
+            </div>
+            <div class="form-group form-title">
+              <label for="author">Author</label>
+              <input type="text" id="author" name="author" required />
+            </div>
+            <div class="form-group form-title">
+              <label for="date">Date</label>
+              <input type="date" id="date" name="date" required />
+            </div>
+            <div class="form-title">
+              <label for="read">Complete</label>
+              <input type="checkbox" name="read" id="read" />
+            </div>
+
+            <input
+              type="submit"
+              value="Submit"
+              name="Submit"
+              id="submit"
+              class="btn-submit"
+            />
+          </form>
+        </div>
+      </div>
+
+      <!-- Modal delete item -->
+      <div class="modal" id="modalDelete">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Delete Book</h2>
+
+          <form class="form" action="#" id="#">
+            <p>Are you sure?</p>
+
+            <input
+              type="submit"
+              value="Submit"
+              name="Submit"
+              id="submit"
+              class="btn-submit"
+            />
+            <input type="text" />
+          </form>
+        </div>
+      </div>
+    </main>
     <footer></footer>
 
-    <script></script>
+    <script src="js/script.js"></script>
+    <script src="js/dom.js"></script>
   </body>
 </html>
