@@ -4,10 +4,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalAdd = document.getElementById("modalItem");
   const span = document.getElementsByClassName("close")[0];
 
+  const searchForm = document.getElementById("formSearch");
+
+  const buttonRemove = document.getElementById("remove");
+  const modalDelete = document.getElementById("modalDelete");
+
   submitForm.addEventListener("submit", (event) => {
     event.preventDefault();
     addBook();
     modalAdd.style.display = "none";
+  });
+
+  searchForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    getSearchBook();
   });
 
   // When the user clicks the button, open the modal
@@ -26,4 +36,19 @@ document.addEventListener("DOMContentLoaded", () => {
       modalAdd.style.display = "none";
     }
   };
+
+  // buttonRemove.onclick = () => {
+  //   modalDelete.style.display = "block";
+  // };
+
+  if (isStorageExist()) {
+    loadDataFromStorage();
+  }
+});
+
+document.addEventListener("ondatasaved", () => {
+  console.log("Data berhasil disimpan.");
+});
+document.addEventListener("ondataloaded", () => {
+  refreshDataFromTodos();
 });
