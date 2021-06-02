@@ -31,19 +31,21 @@ header a {
 }
 
 .header-left{
-    display: flex;
     float: left;
     margin-top: 0px;
+
 }
 
-.header-right{
-    display: flex;
+.header-right {
+    padding: 0 25px;
+    display: block;
     float: right;
     margin-right: 20px;
+    color: #000;
 }
 
 .img-icon{
-  width: 100px;
+  width: 80px;
   margin-top: 0px;
 }
 
@@ -67,6 +69,15 @@ header a {
 .list-item{
     width: 90%;
 }
+
+.formSearch{
+    padding:10px;
+    font-weight: 5px;
+    width: 80%;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-size: 1rem;
+  }
 
 .shadow {
     box-shadow: 0 5px 10px rgba(154, 160, 185, .05), 0 15px 40px rgba(166, 173, 201, .2);
@@ -98,7 +109,6 @@ input[type=checkbox]{
     background-color:#ffa700 ;
     color: white;
     font-size: 24px;
-    margin-top: auto;
     align-self: flex-end;
     cursor: pointer;
 }
@@ -256,6 +266,15 @@ input[type=date],
 	}
 }
 
+.modal-delete {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    height: 50%;
+}
+
 
 .modal-content {
     background-color: #fefefe;
@@ -277,6 +296,20 @@ input[type=date],
 
   .close:hover,
 .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.closeDelete {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .closeDelete:hover,
+.closeDelete:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;

@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const searchForm = document.getElementById("formSearch");
 
-  const buttonRemove = document.getElementById("remove");
+  const spanDelete = document.getElementsByClassName("closeDelete")[0];
+
   const modalDelete = document.getElementById("modalDelete");
 
   submitForm.addEventListener("submit", (event) => {
@@ -20,26 +21,25 @@ document.addEventListener("DOMContentLoaded", () => {
     getSearchBook();
   });
 
-  // When the user clicks the button, open the modal
   buttonAdd.onclick = () => {
     modalAdd.style.display = "block";
   };
 
-  // When the user clicks on <span> (x), close the modal
   span.onclick = () => {
     modalAdd.style.display = "none";
   };
 
-  // When the user clicks anywhere outside of the modal, close it
+  spanDelete.onclick = () => {
+    modalDelete.style.display = "none";
+  };
+
   window.onclick = (event) => {
     if (event.target === modalAdd) {
       modalAdd.style.display = "none";
+    } else if (event.target === modalDelete) {
+      modalDelete.style.display = "none";
     }
   };
-
-  // buttonRemove.onclick = () => {
-  //   modalDelete.style.display = "block";
-  // };
 
   if (isStorageExist()) {
     loadDataFromStorage();

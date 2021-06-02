@@ -17,27 +17,34 @@
 
   <body>
     <header>
-      <!-- <a href="/" class="header-left">
+      <a href="/" class="header-left">
         <figure>
           <img src="assets/book.png" alt="icon" class="img-icon" />
         </figure>
-        <h1>Book Self Reminder</h1>
-      </a> -->
-      <!-- <a href="" class="header-right">
-        <h1>Profile</h1>
-      </a> -->
+      </a>
+      <a
+        href="https://www.linkedin.com/in/robertusadrian/"
+        class="header-right"
+      >
+        <h1><i class="fa fa-user"></i></h1>
+      </a>
     </header>
     <main>
       <!-- Filter -->
-      <section class="wrapper container">
+      <section class="wrapper container bg-white shadow">
         <form class="formSearch" action="#" id="formSearch">
           <input
             type="text"
             id="search"
             name="search"
-            placeholder="Silahkan Cari Data Buku "
+            placeholder="Silahkan Cari Data Buku..."
           />
-          <input type="submit" id="submitSearch" value="Cari" />
+          <input
+            type="submit"
+            id="submitSearch"
+            value="Cari"
+            class="btn-submit"
+          />
         </form>
       </section>
 
@@ -90,24 +97,18 @@
         </div>
       </div>
 
-      <!-- Modal delete item -->
+      <!-- Modal Add Delete -->
       <div class="modal" id="modalDelete">
         <div class="modal-content">
-          <span class="close">&times;</span>
-          <h2>Delete Book</h2>
-
-          <form class="form" action="#" id="#">
-            <p>Are you sure?</p>
-
-            <input
-              type="submit"
-              value="Submit"
-              name="Submit"
-              id="submit"
-              class="btn-submit"
-            />
-            <input type="text" />
-          </form>
+          <span class="closeDelete">&times;</span>
+          <h2>Delete Books</h2>
+          <input
+            type="submit"
+            value="Delete"
+            name="Submit"
+            id="submit"
+            class="btn-submit"
+          />
         </div>
       </div>
     </main>

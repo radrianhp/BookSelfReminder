@@ -25,6 +25,8 @@ const addBook = () => {
   updateDataToStorage();
 };
 
+const deleteBook = () => {};
+
 const getSearchBook = () => {
   let search = document.getElementById("search").value;
   let itemBook = document.getElementsByClassName("item");
@@ -44,16 +46,23 @@ const getSearchBook = () => {
 
 function createButton(buttonTypeClass, buttonId, eventListener) {
   const button = document.createElement("button");
-  button.classList.add(buttonTypeClass);
-  button.id = buttonId;
-  button.addEventListener("click", function (event) {
-    eventListener(event);
-  });
-  return button;
 
-  // buttonRemove.onclick = () => {
-  //   modalDelete.style.display = "block";
-  // };
+  button.classList.add(buttonTypeClass);
+
+  button.id = buttonId;
+
+  if (button.id === "remove") {
+    button.onclick = function (event) {
+      alert("Berhasil dihapus");
+      eventListener(event);
+    };
+  } else {
+    button.addEventListener("click", function (event) {
+      eventListener(event);
+    });
+  }
+
+  return button;
 }
 
 // Checklist button
@@ -69,6 +78,7 @@ function createTrashButton() {
     removeTaskFromCompleted(event.target.parentElement);
   });
 }
+
 // Undo Checlist
 function createUndoButton() {
   return createButton("undo-button", "unchecked", function (event) {
@@ -143,7 +153,7 @@ const makeBook = (title, author, date, isRead) => {
   if (isRead) {
     container.append(createUndoButton(), createTrashButton());
   } else {
-    container.append(createCheckButton());
+    container.append(createCheckButton(), createTrashButton());
   }
 
   return container;
